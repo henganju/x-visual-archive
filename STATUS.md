@@ -7,7 +7,7 @@ Target: **@mihina_48**. Preserve this project; do not initialize another reposit
 - React/TypeScript/Vite archive with chronological grouping, filters, search, statistics, responsive layout, keyboard/modal interaction, original-source links, and unavailable-image states.
 - Official X full-archive/timeline importer, user lookup, reply/repost/author/own-media filtering, string IDs, pagination, atomic checkpoints, cost approval gates, and incremental updates.
 - Fixed resumed updates so an incomplete update can continue with its original `since_id` and does not double-count scanned records.
-- 17 offline tests pass. TypeScript and Vite build pass. Production verification correctly rejects the current demo dataset.
+- 17 offline tests pass. TypeScript and Vite build pass. Production verification correctly rejects the current demo dataset. Browser QA confirmed malformed/empty/broken-image states; desktop/tablet/mobile widths of 1440/1024/390 pixels had no horizontal overflow. Desktop and mobile sticky year jumps and mobile keyboard lightbox controls were verified. These are development-data checks; real-record and deployed-site QA still require the import.
 - No live X calls, X charges, real import, GitHub repository, or public deployment yet.
 
 ## Required external input
