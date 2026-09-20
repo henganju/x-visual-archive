@@ -1,0 +1,7 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "x-visual-archive",
+  "pages_build_output_dir": "dist",
+  "compatibility_date": "2026-09-18",
+  "d1_databases": [{"binding":"DB","database_name":"x-visual-archive-db","database_id":"c6f7c607-7b62-454e-95b4-723596b52ef7","migrations_dir":"migrations"}]
+}
