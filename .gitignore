@@ -10,3 +10,7 @@ playwright-report/
 data/private/
 public/data/archive.json
 public/data/archive-meta.json
+
+.dev.vars
+.dev.vars.*
+!.dev.vars.example

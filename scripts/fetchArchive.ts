@@ -3,6 +3,9 @@ import {existsSync} from 'node:fs';
 import {MetaSchema,parseArchive,type Post,type Meta} from '../src/archive.ts';
 import {normalizeUsername,toPhotoPosts,mergePosts,highestId,pageUrl,budgetPageSize,apiError,type Config,type Page} from './x-core.ts';
 
+// Retained only for the existing offline regression tests. Live API access is disabled.
+if (!(globalThis as any).__OFFLINE_X_FIXTURE__) throw new Error('Live X API access is disabled. Add public post URLs through /curate instead.');
+
 // Secrets are read only by this local command; never imported by the frontend.
 if(existsSync('.env'))process.loadEnvFile('.env');
 async function renameWithRetry(from:string,to:string){for(let attempt=0;;attempt++){try{await rename(from,to);return;}catch(e){if(attempt>=6||!['EPERM','EBUSY','EACCES'].includes((e as NodeJS.ErrnoException).code||''))throw e;await new Promise(r=>setTimeout(r,50*2**attempt));}}}

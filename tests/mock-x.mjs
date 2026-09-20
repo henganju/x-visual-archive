@@ -1,4 +1,5 @@
 import {appendFileSync} from 'node:fs';
+globalThis.__OFFLINE_X_FIXTURE__=true;
 const photo={media_key:'own',type:'photo',url:'https://pbs.twimg.com/media/example.jpg',width:600,height:800};
 globalThis.fetch=async(input)=>{
  const url=new URL(input);if(url.hostname!=='api.x.com')throw new Error('Unexpected host in isolated test');

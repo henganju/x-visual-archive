@@ -1,2 +1,4 @@
 import {defineConfig} from 'vite';
-export default defineConfig({server:{host:'127.0.0.1',port:5173,strictPort:true},optimizeDeps:{esbuildOptions:{absWorkingDir:process.cwd()}}});
+import {localEnv} from './server/local';
+import {handle} from './server/worker';
+export default defineConfig({plugins:[{name:'local-archive',configureServer(server){const env=localEnv();server.middlewares.use('/api',async(req,res)=>{try{const chunks:Buffer[]=[];for await(const chunk of req)chunks.push(Buffer.from(chunk));const response=await handle(new Request(`http://127.0.0.1:5173/api${req.url}`,{method:req.method,headers:req.headers as Record<string,string>,...(req.method==='POST'?{body:Buffer.concat(chunks)}:{})}),env);res.statusCode=response.status;response.headers.forEach((v,k)=>res.setHeader(k,v));res.end(await response.text())}catch{res.statusCode=500;res.end('{"error":"Local server error."}')}})}}],server:{host:'127.0.0.1',port:5173,strictPort:true},optimizeDeps:{esbuildOptions:{absWorkingDir:process.cwd()}}});
