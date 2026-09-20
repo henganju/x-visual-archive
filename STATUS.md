@@ -10,3 +10,5 @@ Cloudflare project x-visual-archive; DB x-visual-archive-db; binding DB. Migrati
 21 automated tests pass; production build and no-paid-API/no-demo checks pass. Browser verified official embed locally, bulk import results, sign-in, filters, search, sorting and responsive layouts. Deployed public API returns the real entry; anonymous curator data access returns 401.
 
 For future posts use /curate. For frontend changes use npm run deploy after Wrangler sign-in.
+
+GitHub source and commit history successfully pushed. Production official embed visibly verified; browser console reported no errors or warnings. Final typography and singular labels polished and redeployed.
