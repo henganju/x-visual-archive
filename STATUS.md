@@ -12,3 +12,5 @@ Cloudflare project x-visual-archive; DB x-visual-archive-db; binding DB. Migrati
 For future posts use /curate. For frontend changes use npm run deploy after Wrangler sign-in.
 
 GitHub source and commit history successfully pushed. Production official embed visibly verified; browser console reported no errors or warnings. Final typography and singular labels polished and redeployed.
+
+September 24: user requested replacing the public post-card collection with a one-photo gallery preview. The supplied pbs.twimg.com image is associated with May 21 post 2057476552766665142. All D1 entries retained. Public gallery uses src/gallery.json; independent of URL-only curator imports until a full photo curation workflow is requested.

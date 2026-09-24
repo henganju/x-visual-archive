@@ -52,3 +52,6 @@ Public assets are static and `/api/*` alone invokes the Pages Function. Public r
 ## Sources and permissions
 
 [X's official embedding instructions](https://help.x.com/en/using-x/how-to-embed-a-post) describe the supported media embed mechanism. Content remains with X and its authors; this project claims no ownership. Do not use the curator to recover deleted, private or inaccessible content. The UI does not identify whether a failure means deletion, account restriction or browser blocking.
+
+## Current gallery preview
+The public homepage now shows only the curator-supplied May 21 photograph in src/gallery.json, with its full aspect ratio and a link to the original post. It loads no X widgets. Existing D1 records remain available in /curate and have not been deleted. URL-only imports currently update the retained index, not this one-image preview. No image binaries are stored or re-hosted.
